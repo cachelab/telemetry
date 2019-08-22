@@ -6,8 +6,9 @@ jobs:
     docker:
       - image: golang:1.12.9
         environment:
-          INFLUX_URL: http://127.0.0.1:8086
-          RUN_ONCE: true
+          - INFLUX_URL: http://127.0.0.1:8086
+          - GO111MODULE: "on"
+          - RUN_ONCE: true
       - image: influxdb:1.7.7-alpine
     steps:
       - checkout

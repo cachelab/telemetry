@@ -3,6 +3,8 @@
 Simple lightweight API that accepts a POST request with a JSON payload that is
 written directly into InfluxDB.
 
+[![CircleCI](https://circleci.com/gh/cachelab/telemetry.svg?style=svg)](https://circleci.com/gh/cachelab/telemetry)
+
 ## Usage
 
 This task is configured by the following environment variables:
