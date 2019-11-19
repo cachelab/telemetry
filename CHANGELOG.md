@@ -1,3 +1,7 @@
+## 1.1.1 (November 19, 2019)
+
+* Various cleanup items.
+
 ## 1.1.0 (November 11 2019)
 
 * Updated Go docker version.

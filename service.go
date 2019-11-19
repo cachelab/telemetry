@@ -11,6 +11,7 @@ import (
 	client "github.com/influxdata/influxdb1-client/v2"
 )
 
+// Defaults that can be overridden.
 const DefaultInfluxURL = "http://influx:8086"
 const DefaultInfluxUsername = "admin"
 const DefaultInfluxPassword = "admin"
@@ -37,42 +38,42 @@ func (svc *Service) Init() error {
 	var influxPassword string
 	var runOnce bool
 
-	// Check for the INFLUX_URL
+	// Check if there is a INFLUX_URL passed in.
 	if os.Getenv("INFLUX_URL") == "" {
 		influxUrl = DefaultInfluxURL
 	} else {
 		influxUrl = os.Getenv("INFLUX_URL")
 	}
 
-	// Check for the INFLUX_USERNAME
+	// Check if there is a INFLUX_USERNAME passed in.
 	if os.Getenv("INFLUX_USERNAME") == "" {
 		influxUsername = DefaultInfluxUsername
 	} else {
 		influxUsername = os.Getenv("INFLUX_USERNAME")
 	}
 
-	// Check for the INFLUX_PASSWORD
+	// Check if there is a INFLUX_PASSWORD passed in.
 	if os.Getenv("INFLUX_PASSWORD") == "" {
 		influxPassword = DefaultInfluxPassword
 	} else {
 		influxPassword = os.Getenv("INFLUX_PASSWORD")
 	}
 
-	// Check for the INFLUX_DATABASE
+	// Check if there is a INFLUX_DATABASE passed in.
 	if os.Getenv("INFLUX_DATABASE") == "" {
 		svc.database = DefaultInfluxDatabase
 	} else {
 		svc.database = os.Getenv("INFLUX_DATABASE")
 	}
 
-	// Check for the INFLUX_PRECISION
+	// Check if there is a INFLUX_PRECISION passed in.
 	if os.Getenv("INFLUX_PRECISION") == "" {
 		svc.precision = DefaultInfluxPrecision
 	} else {
 		svc.precision = os.Getenv("INFLUX_PRECISION")
 	}
 
-	// Check for the RUN_ONCE
+	// Check if there is a RUN_ONCE passed in.
 	if os.Getenv("RUN_ONCE") == "" {
 		runOnce = DefaultRunOnce
 	} else {
